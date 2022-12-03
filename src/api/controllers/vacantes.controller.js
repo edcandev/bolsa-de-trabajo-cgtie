@@ -1,3 +1,4 @@
+const path = require('path');
 const googleSheets = require('../google-api/googleSheets-api.js'); // goo = funciones de la API de Google
 
 // DATOS DE LA HOJA DE VACANTES
@@ -23,8 +24,11 @@ async function postVacantes(req,res) {
     registroAInsertar.push(fila);        
     await googleSheets.sheetsAutomatePost(vacantesURL,vacantesRange,registroAInsertar);    
     
-    console.log(req.body + 'Vacantes ingresadas desde FORM');
+    console.log(req.body);
+    const resURL = path.join(req.get('Referer'),'../ok')
+    console.log(resURL);
     res.redirect('/form/ok');
+    res.end();
 }
 
 // req.body es un objeto de Javascript

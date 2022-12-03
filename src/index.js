@@ -6,7 +6,7 @@ const apiRouter =  require ('./api/routes/api.routes.js');
 const formRouter = require('./form/routes/form.routes');
 
 // process.env.PORT devuelve un puerto dis
-const PORT = 3000 || process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 // publicFolder contiene los archivos estáticos y públicos (css,imgs,js).
 const publicFolder = path.join(__dirname,'/public');
