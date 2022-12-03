@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href=" /form-public/styles/layout.css">
+    
+    <script src="/form-public/js/index.html.js" defer></script>
+    <title>Registro Vacantes App</title>
+</head>
+<body>
+    <header>
+        <h1>Registro de Vacantes - Bolsa de Trabajo TESE</h1>
+        <h2>Formulario para el registro de vacantes</h2>
+    </header>
+
+    <div>    
+
+        <form method="post" action="/form/registro" class="form-contenedor">
+            <div>
+                <p><b>Datos de la vacante.</b></p>
+                <label for="nombre_unidad_eco">Seleccione su unidad económica:</label><br>
+                <small>(Sino ha registrado su unidad económica, puede hacerlo a través del siguiente
+                    <a href="https://forms.gle/PRefxBXUNBbUPn7K9" target="_blank">enlace</a>:)</small>
+                <br>
+                <select name="nombre_unidad_eco" id="nombre_unidad_eco" class="nombre_unidad_eco" required>
+                    <option>Desplegar opciones</option>
+                </select><br>
+
+                <label for="puesto_vacante">Puesto de la vacante:</label>
+                <small>(Por ejemplo: "Trabajador","Desarrollador").</small><br>
+                <input name="puesto_vacante" id="puesto_vacante" type="text" required><br>
+                
+                <label for="actividades_vacante">Actividades a desarrollar:</label>
+                <small>(Separar por puntos).</small><br>
+                <textarea name="actividades_vacante" id="actividades_vacante" cols="30" rows="10" required></textarea><br>
+                
+                <label for="horario_entrada">Horario de entrada:</label>
+                <input name="horario_entrada" id="horario_entrada" type="time" required><br>
+
+                <label for="horario_salida">Horario de salida:</label>
+                <input name="horario_salida" id="horario_salida" type="time" required><br>
+                
+                <label for="ubicacion_vacante">Ubicación del empleo:</label><br>
+                <select name="ubicacion_vacante" id="ubicacion_vacante" required>
+                    <option>Desplegar opciones</option>                
+                    <option value="cdmx">Ciudad de México</option>
+                    <option value="edomex">Estado de México</option>
+                </select><br>   
+
+                <label for="tipo_empleo">Tipo de empleo:</label><br>
+                <select name="tipo_empleo" id="tipo_empleo" required>
+                    <option>Desplegar opciones</option>                
+                    <option value="presencial">Presencial</option>
+                    <option value="remoto">Trabajo Remoto</option>
+                </select>
+            </div>
+
+            <div>
+                <p><b>Requisitos de la vacante.</b></p>
+                <label for="carrera">Carrera:</label>
+                <small>(Sino encuentra la carrera específica, seleccionar alguna afín).</small><br>
+                <select name="carrera" id="carrera" required>
+                    <option>Desplegar opciones</option>
+                    <option value="Licenciatura en Derecho">Licenciatura en Derecho</option>
+                    <option value="Medicina">Medicina</option>
+                    <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+                    <option value="Contador Público">Contador Público</option>
+                    <option value="Gastronomía">Gastronomía</option>
+                    <option value="Ingeniería Civil">Ingeniería Civil</option>
+                    <option value="Arquitectura">Arquitectura</option>
+                    <option value="Negocios Internacionales">Negocios Internacionales</option>
+                    <option value="Ciencias de la Comunicación">Ciencias de la Comunicación</option>
+                    <option value="Formación docente para educación básica, nivel primaria">Formación docente para educación básica, nivel primaria</option>
+                    <option value="Tecnologías de la Información y la Comunicación">Tecnologías de la Información y la Comunicación</option>
+                    <option value="Psicología">Psicología</option>
+                    <option value="Ingeniería en Gestión Empresarial">Ingeniería en Gestión Empresarial</option>
+                    <option value="Ingeniería en Sistemas Computacionales">Ingeniería en Sistemas Computacionales</option>
+                    <option value="Ingeniería Mecánica">Ingeniería Mecánica</option>
+                    <option value="Ingeniería Electrónica">Ingeniería Electrónica</option>
+                    <option value="Ingeniería Química">Ingeniería Química</option>
+                    <option value="Ingeniería Bioquímica">Ingeniería Bioquímica</option>
+                    <option value="Ingeniería Mecatrónica">Ingeniería Mecatrónica</option>
+                    <option value="Ingeniería Informática">Ingeniería Informática</option>
+                    <option value="Ingeniería en Aeronáutica">Ingeniería en Aeronáutica</option>
+            </select><br>
+            <label for="situacion_escolar">Situación Escolar:</label>
+            <small>(Describir).</small><br>
+            <select name="situacion_escolar" id="situacion_escolar" required>
+                <option>Desplegar opciones</option>                
+                <option value="titulado">Titulado</option>
+                <option value="pasante">Pasante 100%</option>
+                <option value="estudiante">Estudiante</option>
+            </select><br>
+            
+            <label for="semestre">Semestre:</label>
+            <small>(Si requiere personal pasante, titulado o no requiere carrera, dejar en blanco).</small><br>
+            <input name="semestre" id="semestre" type="number" min="1" max="10">
+            
+            <label for="conocimientos">Conocimientos adicionales requeridos:</label>
+            <small>(Tecnologías, Certificaciones, Diplomados. Separar por puntos).</small><br>
+            <textarea name="conocimientos" id="conocimientos" cols="30" rows="10" required></textarea><br>
+            
+            <label for="ingles">¿Requiere conocimientos en inglés?</label><br>
+            <input name="ingles" id="si" value="si" type="radio" required>
+            <label for="si"class="combo-label">Sí</label><br>
+            <input name="ingles" id="no" value="no" type="radio" required>
+            <label for="no"class="combo-label">No</label><br>
+
+            <label for="nivel_ingles">Nivel de dominio del idioma inglés requerido:</label>
+            <small>(...).</small><br>
+            <input name="nivel_ingles" value="intermedio" id="intermedio" type="radio">
+            <label for="intermedio" class="combo-label">Intermedio</label><br>
+            <input name="nivel_ingles" value="intermedio-alto" id="intermedio-alto" type="radio">
+            <label for="intermedio-alto"class="combo-label">Intermedio-alto</label><br>
+            <input name="nivel_ingles" value="avanzado" id="avanzado" type="radio">
+            <label for="avanzado"class="combo-label">Avanzado</label><br>
+            <input name="nivel_ingles" value="no_ingles" id="no_ingles" type="radio">
+            <label for="no_ingles"class="combo-label">No requiere dominio del idioma Inglés</label><br>
+
+            <label for="otro_idioma">¿Requiere conocimientos en otro idioma?</label>
+            <small>(Sino es requerido, dejar en blanco)</small><br>
+            <input name="otro_idioma" id="otro_idioma" type="text"><br>
+            
+            <label for="edad">Edad mínima requerida:</label>
+            <small>(número de años):</small><br>
+            <input name="edad" id="edad" type="number" min="1" max="99" required>
+
+            <label for="sexo">Sexo:</label><br>
+            <input name="sexo" value="mujer" id="mujer" type="radio" required>
+            <label for="mujer" class="combo-label">Mujer</label><br>
+            <input name="sexo" value="hombre" id="hombre" type="radio" required>
+            <label for="hombre" class="combo-label">Hombre</label><br>
+            <input name="sexo" value="indistinto" id="indistinto" type="radio" required>
+            <label for="indistinto" class="combo-label">Indistinto</label>
+        </div>
+            <input id="boton_submit" type="submit">
+        </form>
+
+
+    </div>
+    <footer>
+        <p class="footer_p footer_p1">Tecnológico de Estudios Superiores de Ecatepec</p>
+        <p class="footer_p footer_p2">Centro de Gestión Tecnológica e Incubadora de Empresas</p>
+        <p class="footer_p footer_p3">Cano R. Edgar I., Hernández R. Yesenia</p>
+    </footer>
+</body>
+</html>
