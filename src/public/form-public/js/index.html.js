@@ -1,7 +1,6 @@
 // Fichero JS de views/index.html
 
 // URL de nuestra API
-//const URL = 'https://bolsa-de-trabajo-api-production.up.railway.app/api/unidades-eco/';
 
 // URL en localhost
 
