@@ -9,5 +9,11 @@ router.get('/app/login', appController.getIndexPage);
 router.post('/app/login', appController.checkLogin);
 router.get('/app/inicio', appController.toInicio);
 
-router.all('/app/inicio/candidatos', appController.toCandidatos);
+router.get('/app/logout', appController.logout);
+
+router.get('/app/candidatos', appController.toCandidatos);
+router.get('/app/unidades-eco', appController.toUnidadesEco);
+router.get('/app/vacantes', appController.toVacantes);
+router.get('/app/informes', appController.toInformes);
+
 module.exports = router;

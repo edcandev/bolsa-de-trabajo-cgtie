@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="/app-public/styles/layout.css">
+    <script src="/app-public/js/common.html.js" defer></script>
+    <title>Sistema de Administración</title>
+    <script src="/app-public/js/candidatos.html.js" defer></script>
+    <title>Sistema de Administración</title>
+</head>
+<body class="bg-tese">
+    <header class="bg-dark-green p-15px0px">
+        <h1 class="text-align-center font-family-nunito color-light-green font-size-3em font-weight-bold">Sistema de Administración - Bolsa de Trabajo TESE</h1>
+        <h2 class="text-align-center font-family-nunito color-light-green" >Centro de Gestión Tecnológica e Incubadora de Empresas</h2>
+    </header>
+    <main>
+        <div class="grid-container grid-container-candidatos">
+            <div class="grid-item grid-candidatos-item-1">
+                <h3 id="user_h3" class="width-100per color-white font-family-nunito font-size-3em align-self-center" >Usuario: </h3>
+                <a id="a_home" class="p-2per mr-2per align-self-center" href="/app/inicio">
+                    <img class="icons" src="/app-public/images/home.png">
+                </a>
+                <a id="a_logout" class="p-2per align-self-center" href="/app/logout">
+                    <img class="icons" src="/app-public/images/logout.png">
+                </a>
+            </div>
+
+            <div class="grid-item grid-item-2">
+                <a class="candidatos-options options_image_p" href="/app/candidatos/internos">
+                    <img class="options_image" src="/app-public/images/interno.png" alt="">
+                    <p class="options_image_p">CONSULTAR CANDIDATOS INTERNOS</p>
+                </a>
+            </div>
+
+            <div class="grid-item grid-item-3">
+                <a class="candidatos-options options_image_p" href="/app/candidatos/externos">
+                    <img class="options_image" src="/app-public/images/externo.png" alt="">
+                    <p>CONSULTAR CANDIDATOS EXTERNOS</p>
+                </a>
+            </div>
+        </div>
+    </main>
+    <div>
+        <div id="candidatos_container" class="candidatos_container">
+            <h4 class="candidatos_container_h4"></h4>
+            <div class="display-flex width-100per flex_container-table">
+
+                <table class="candidatos_table">
+                    <tr id="candidatos_table_header_row">
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
