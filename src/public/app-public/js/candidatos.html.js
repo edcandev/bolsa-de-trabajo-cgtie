@@ -2,12 +2,35 @@ const candidatosOptions =  document.querySelectorAll(".candidatos-options");
 
 const candidatosContainer = document.querySelector("#candidatos_container");
 
+let candidatosTable = document.querySelector(".candidatos_table");
+
 candidatosOptions.forEach((option)=> {
     option.addEventListener('click',async (e)=> {
         e.preventDefault();
 
+        if(candidatosTable.childElementCount > 1 ) {
+            console.log("jeje");
+            candidatosTable.remove();
+
+            const newTable = document.createElement("table");
+            const newHeaderRoW = document.createElement("tr");
+            newHeaderRoW.id = "candidatos_table_header_row";
+            newTable.appendChild(newHeaderRoW);
+            newTable.classList.add("candidatos_table");
+
+            document.querySelector(".flex_container-table").appendChild(newTable);
+
+            candidatosTable = newTable;
+        }
+
+
+        /*while(candidatosTable.hasChildNodes()) {
+            candidatosTable.removeChild(candidatosTable.firstChild)
+        }*/
+
+
         const candidatos = await getCandidatos(option.getAttribute('href'));
-        console.log(candidatos);
+        //console.log(candidatos);
         printData(candidatos);
 
         if(option.innerHTML.includes('INTERNOS')) {
@@ -31,7 +54,7 @@ async function getCandidatos(anchorHREF) {
     let candidatos = {};
 
     const apiURL = getApiURL(anchorHREF)
-    console.log(apiURL);    
+    //console.log(apiURL);    
 
     await fetch(apiURL) // Pide datos de la API
     .then(response => response.json())
@@ -46,28 +69,48 @@ async function getCandidatos(anchorHREF) {
 function printData(data){
 
     const headerRow = data[0];
+    
+    const headerMainData = [
+        'A. Paterno:', 'A. Materno:' , 'Nombre(s):','Teléfono Celular:','Edad (número de años):','Correo Electrónico:','Carrera:','Matrícula:','Semestre:'
+    ]; // Datos principales de cada aspirante
 
-    headerRow.forEach((element)=> {
-        const headerCell = document.createElement('th');
-        headerCell.classList.add('candidatos_table_header_row_cell');
-        document.querySelector('#candidatos_table_header_row').appendChild(headerCell).innerHTML = element;
+    const headerMainDataIndex = [];
+
+    headerRow.forEach((element, index)=> {
+
+
+        console.log(element);
+
+        if(headerMainData.includes(element)) { 
+            headerMainDataIndex.push(index);
+
+            const headerCell = document.createElement('th');
+            headerCell.classList.add('candidatos_table_header_row_cell');
+            document.querySelector('#candidatos_table_header_row').appendChild(headerCell).innerHTML = element;
+        }
+            
     });
 
-     for (const element in data) {
+    console.log(headerMainDataIndex);
+
+      for (const element in data) {
         if(element != 0) {
             console.log(data[element]);
             const contentRow = document.createElement('tr');
             document.querySelector('.candidatos_table').appendChild(contentRow);
 
-            data[element].forEach((cell) => {
-                const rowCell = document.createElement('td');
-                rowCell.classList.add('candidatos_table_row_cell');  
-                contentRow.appendChild(rowCell).innerHTML = cell;
+            data[element].forEach((cell, index) => {
+                if(headerMainDataIndex.includes(index)){
+                    const rowCell = document.createElement('td');
+                    rowCell.classList.add('candidatos_table_row_cell');  
+                    contentRow.appendChild(rowCell).innerHTML = cell;
+                }
             });
 
         }
         
     }
+    
 }   
 
 

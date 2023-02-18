@@ -8,6 +8,8 @@ const viewsFolder = path.join(__dirname,'../views/');
 
 const sessions = [];
 
+// const isLogged = true; // DELETE ON PRUDCTIION
+
 function getIndexPage(req, res) {
     res.clearCookie('sessionId');
     res.sendFile(path.join(viewsFolder,'index.html'));
@@ -44,9 +46,8 @@ function toInicio(req, res) {
     const { cookies } = req;
     //console.log("Sesiones: ");
     //console.log(sessions);
-    //const isLogged = adminLogger(cookies);
-
-    const isLogged = true;
+    
+    const isLogged = adminLogger(cookies);
 
     if(isLogged) {
         res.sendFile(path.join(viewsFolder,'inicio.html'));
@@ -58,9 +59,7 @@ function toInicio(req, res) {
 function toCandidatos(req, res) {
     const { cookies } = req;
     
-    //const isLogged = adminLogger(cookies);
-
-    const isLogged = true;
+    const isLogged = adminLogger(cookies);
 
     if(isLogged) {
         res.sendFile(path.join(viewsFolder,'candidatos.html'));
@@ -74,6 +73,7 @@ function toUnidadesEco(req, res) {
     const { cookies } = req;
     
     const isLogged = adminLogger(cookies);
+    
 
     if(isLogged) {
         res.sendFile(path.join(viewsFolder,'unidades-eco.html'));
@@ -85,7 +85,7 @@ function toUnidadesEco(req, res) {
 function toVacantes (req, res) {
     const { cookies } = req;
     
-    const isLogged = adminLogger(cookies);
+     const isLogged = adminLogger(cookies);
 
     if(isLogged) {
         res.sendFile(path.join(viewsFolder,'vacantes.html'));

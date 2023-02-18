@@ -8,7 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="/app-public/styles/layout.css">
-    <script src="/app-public/js/inicio.html.js" defer></script>
+    <script src="/app-public/js/common.html.js" defer></script>
+    <script src="/app-public/js/vacantes.html.js" defer></script>
+
     <title>Sistema de Administración</title>
 </head>
 <body class="bg-tese height-100vh">
@@ -30,13 +32,38 @@
             </div>
 
             <div class="grid-item grid-item-2">
-                <a class="options_image_p" href="/app/candidatos/internos">
+                <a class="vacantes_options options_image_p" href="/app/vacantes">
                     <img class="options_image" src="/app-public/images/interno.png" alt="">
-                    <p class="options_image_p"> jeje</p>
+                    <p class="options_image_p">Consultar Vacacantes</p>
                 </a>
             </div>
 
         </div>
     </main>
+
+    <div>
+        <div id="vacantes_container" class="container">
+            <h4 class="vacantes_container_h4"></h4>
+            <div class="display-flex width-100per flex_container-table">
+
+                <table class="vacantes_table">
+                    <tr id="vacantes_table_header_row">
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div id="" class="descarga_container ">
+            <h4 class="candidatos_container_h4">JEJE</h4>
+            <div>
+                Descargar informe completo:
+            </div>
+        </div>
+    </div>
+
+
+
 </body>
 </html>

@@ -271,8 +271,8 @@ body {
     background-color: var(--color4);
 }
 
-.candidatos_container {
-    width: 80%;
+.container {
+    width: 95%;
     margin: 0 auto;
     margin-top: 5%;
     background-color: var(--color4);
@@ -280,7 +280,26 @@ body {
     font-size: 2em;
     padding: 15px;
     border-radius: 15px;
-
+}
+.candidatos_container {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 5%;
+    background-color: var(--color4);
+    font-family: 'Nunito';
+    font-size: 2em;
+    padding: 15px;
+    border-radius: 15px;
+}
+.descarga_container {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 5%;
+    background-color: var(--dark-green);
+    font-family: 'Nunito';
+    font-size: 2em;
+    padding: 15px;
+    border-radius: 15px;
 }
 
 .flex_container-table{
@@ -289,6 +308,16 @@ body {
 }
 
 .candidatos_container_h4 {
+    text-align: center;
+    margin-bottom: 2%;
+    color: #092b08;
+}
+.unidades-eco_container_h4 {
+    text-align: center;
+    margin-bottom: 2%;
+    color: #092b08;
+}
+.vacantes_container_h4 {
     text-align: center;
     margin-bottom: 2%;
     color: #092b08;
@@ -311,11 +340,44 @@ body {
     background-color: var(--dark-green);
     font-size: .5em;
     color: #e8ffe2;
+    margin: 0 auto;
 }
 .candidatos_table_header_row_cell {
     padding: 10px;
 }
 .candidatos_table_row_cell {
+    padding: 10px;
+    background-color: #8acb76;
+    color: #092b08;
+}
+.unidades-eco_table {
+    background-color: var(--dark-green);
+    font-size: .5em;
+    color: #e8ffe2;
+    margin: 0 auto;
+
+}
+.unidades-eco_table_header_row_cell {
+    padding: 10px;
+}
+.unidades-eco_table_row_cell {
+    padding: 10px;
+    background-color: #8acb76;
+    color: #092b08;
+}
+
+.vacantes_table {
+    background-color: var(--dark-green);
+    font-size: .5em;
+    color: #e8ffe2;
+    margin: 0 auto;
+}
+
+.vacantes_table_header_row_cell {
+    padding: 10px;
+}
+
+.vacantes_table_row_cell {
     padding: 10px;
     background-color: #8acb76;
     color: #092b08;
