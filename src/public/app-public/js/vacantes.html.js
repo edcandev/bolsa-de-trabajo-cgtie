@@ -4,6 +4,9 @@ const vacantesContainer = document.querySelector("#vacantes_container");
 
 let vacantesTable = document.querySelector(".vacantes_table");
 
+const descargaContainer = document.querySelector(".descarga_container");
+
+
 vacantesOptions.forEach((option)=> {
     option.addEventListener('click',async (e)=> {
         e.preventDefault();
@@ -29,6 +32,16 @@ vacantesOptions.forEach((option)=> {
         vacantesContainer.firstElementChild.innerHTML = 'Listado de Vacantes';
 
         vacantesContainer.classList.remove("display-none");
+
+        // Habilitando contenedor de descarga de informe
+        descargaContainer.classList.remove("display-none");
+
+        const enlaceVacantes = "https://docs.google.com/spreadsheets/d/1jWtWT8FqSZCOkhYJckZB8Rimx0P0j9FqbVOdazhY6CQ/edit?usp=sharing";
+        
+
+        descargaContainer.firstElementChild.innerHTML = "Acceso al informe completo";
+        document.querySelector(".descarga_container > a").innerHTML = "Informe Vacantes";
+        document.querySelector(".descarga_container > a").href = enlaceVacantes;
         
     });
 });

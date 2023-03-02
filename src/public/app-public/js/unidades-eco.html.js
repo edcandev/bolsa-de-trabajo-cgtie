@@ -4,6 +4,9 @@ const unidadesEcoContainer = document.querySelector("#unidades-eco_container");
 
 let unidadesEcoTable = document.querySelector(".unidades-eco_table");
 
+const descargaContainer = document.querySelector(".descarga_container");
+
+
 unidadesEcoOptions.forEach((option)=> {
     option.addEventListener('click',async (e)=> {
         e.preventDefault();
@@ -30,6 +33,19 @@ unidadesEcoOptions.forEach((option)=> {
 
 
         unidadesEcoContainer.classList.remove("display-none");
+
+
+        // Habilitando contenedor de descarga de informe
+        descargaContainer.classList.remove("display-none");
+
+        const enlaceVacantes = "https://docs.google.com/spreadsheets/d/1jWtWT8FqSZCOkhYJckZB8Rimx0P0j9FqbVOdazhY6CQ/edit?usp=sharing";
+        const enlaceInformeUnidadesEconomicas = "https://docs.google.com/spreadsheets/d/1aHT-PS82AUyetqzNh8Q2Wt1BwG0fg1wYp_Jbok_DCSU/edit?usp=sharing";
+
+        descargaContainer.firstElementChild.innerHTML = "Acceso al informe completo";
+        document.querySelector(".descarga_container > a").innerHTML = "Informe Unidades Económicas";
+        document.querySelector(".descarga_container > a").href = enlaceInformeUnidadesEconomicas;
+
+
         
 
     });

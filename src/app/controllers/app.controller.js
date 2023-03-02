@@ -107,6 +107,19 @@ function toInformes(req, res) {
 
 }
 
+function toEnviar(req, res) {
+    const { cookies } = req;
+    
+    const isLogged = adminLogger(cookies);
+
+    if(isLogged) {
+        res.sendFile(path.join(viewsFolder,'enviar.html'));
+    } else {
+        res.sendFile(path.join(viewsFolder,'401.html'));
+    }
+
+}
+
 ['OutLogger']
 function logout(req, res) {
 
@@ -123,4 +136,4 @@ function adminLogger(cookies) {
     return sessions.some(session => session.sessionId === cookies.sessionId); 
 }
 
-module.exports = { getIndexPage, checkLogin, toInicio, toCandidatos, toUnidadesEco, toVacantes, toInformes, logout};
+module.exports = { getIndexPage, checkLogin, toInicio, toCandidatos, toUnidadesEco, toVacantes, toInformes, toEnviar, logout};

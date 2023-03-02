@@ -15,5 +15,6 @@ router.get('/app/candidatos', appController.toCandidatos);
 router.get('/app/unidades-eco', appController.toUnidadesEco);
 router.get('/app/vacantes', appController.toVacantes);
 router.get('/app/informes', appController.toInformes);
+router.get('/app/enviar', appController.toEnviar);
 
 module.exports = router;

@@ -272,7 +272,7 @@ body {
 }
 
 .container {
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
     margin-top: 5%;
     background-color: var(--color4);
@@ -397,7 +397,9 @@ body {
     background-color: #0a3109;
 }
 
-
+.justify-content-center {
+    justify-content: center;
+}
 
 /* body {
     background: linear-gradient(#194318aa,#8acb76aa ), url(../images/tese.jpeg  );

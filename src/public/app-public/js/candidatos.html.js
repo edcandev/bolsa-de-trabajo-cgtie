@@ -4,6 +4,8 @@ const candidatosContainer = document.querySelector("#candidatos_container");
 
 let candidatosTable = document.querySelector(".candidatos_table");
 
+const descargaContainer = document.querySelector(".descarga_container");
+
 candidatosOptions.forEach((option)=> {
     option.addEventListener('click',async (e)=> {
         e.preventDefault();
@@ -33,10 +35,23 @@ candidatosOptions.forEach((option)=> {
         //console.log(candidatos);
         printData(candidatos);
 
+        descargaContainer.classList.remove("display-none");
+
         if(option.innerHTML.includes('INTERNOS')) {
+            const enlaceInformeInternos = "https://docs.google.com/spreadsheets/d/1ttjwBiva_wNu_9MJPSrSwcP_M6l72KdN4jkIu2XHd6o/edit?usp=sharing"
             candidatosContainer.firstElementChild.innerHTML = ' Candidatos Internos';
+            descargaContainer.firstElementChild.innerHTML = "Acceso al informe completo";
+            document.querySelector(".descarga_container > a").innerHTML = "Informe candidatos internos";
+            document.querySelector(".descarga_container > a").href = enlaceInformeInternos;
+
         } else {
+            const enlaceInformeExternos = "https://docs.google.com/spreadsheets/d/1OKhgAGjH4Al4HFVimQ5hQnAzGVj0tW8MFkxAvwnLPEU/edit?usp=sharing";
             candidatosContainer.firstElementChild.innerHTML = 'Candidatos Externos';
+            descargaContainer.firstElementChild.innerHTML = "Acceso al informe completo";
+            document.querySelector(".descarga_container > a").innerHTML = "Informe candidatos externos";
+            document.querySelector(".descarga_container > a").href = enlaceInformeExternos;
+
+
         }
         candidatosContainer.classList.remove("display-none");
         

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="/app-public/styles/layout.css">
-    <script src="/app-public/js/inicio.html.js" defer></script>
+    <script src="/app-public/js/enviar.html.js" defer></script>
     <title>Sistema de Administración</title>
 </head>
 <body class="bg-tese height-100vh">
@@ -29,11 +29,25 @@
                 </a>
             </div>
 
-            <div class="grid-item grid-item-2">
+
+            <!-- <div class="grid-item grid-item-2">
                 <a class="options_image_p" href="/app/candidatos/internos">
                     <img class="options_image" src="/app-public/images/interno.png" alt="">
                     <p class="options_image_p"> jeje</p>
                 </a>
+            </div> -->
+
+            <div>
+                <div id="vacantes_container" class="container">
+                    <h4 class="vacantes_container_h4"></h4>
+                    <div class="display-flex width-100per flex_container-table">
+        
+                        <table class="vacantes_table">
+                            <tr id="vacantes_table_header_row">
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
 
         </div>
