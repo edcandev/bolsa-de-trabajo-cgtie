@@ -401,6 +401,12 @@ body {
     justify-content: center;
 }
 
+.result_table {
+    display: inline-block;
+    margin: 0 auto;
+    border-radius: 10px; background-color: #194318; font-size: 80%; padding: 3%; text-align: center; width: 100%; color:#e7ffe6
+}
+
 /* body {
     background: linear-gradient(#194318aa,#8acb76aa ), url(../images/tese.jpeg  );
     background-size:cover;
